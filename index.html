@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Criptografador</title>
+        <meta charset="UTF-8">
+        <meta name = "author" content=" Nathália Rebouças">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel = "stylesheet" href ="css/style.css"> 
+        
+        
+    </head>
+
+    <body>
+        <header id="cabecalho">
+            <h1 id="logo">N</h1>
+        </header>
+
+        <h1 id="titulo">Criptografador de Mensagens</h1>
+        
+        <div class="area-principal">
+            <div class="area-texto" >
+                <textarea placeholder="Digite aqui sua mensagem"  type="text" ></textarea>
+            </div> 
+
+            <div id="bloco-mensagem"> 
+                <div class="mostra-mensagem" id="mostra-mensagem">
+                    <img src="./images/oops.png" id="img-procuramensagem">
+                </div>  
+            </div>         
+        </div> 
+        
+        <div id="botoes">
+            <button class= 'botao' id="encrypt">Criptografar</button>
+            <button class= 'botao' id="decrypt">Descriptografar</button>
+        </div>
+        <div id="botao-copy">
+            <button class= 'botao' id="copy">Copiar</button> 
+            
+        </div> 
+        
+
+        <p id="informe">*Permitido apenas letras minúsculas e sem acentuação.</p>
+
+        <div id="rodape">
+            <footer>
+                <p id="info"> 
+                    
+                    <script> 
+                        var timestamp = new Date();
+                        document.getElementById('info').innerHTML = timestamp.getFullYear();
+                    </script> 
+                      &copy;Nathália F. Rebouças 
+
+                    <a href="https://www.linkedin.com/in/nathalia-reboucas/" target="_blank" ><img class="img-footer" src="./images/linkedin.png"></a>
+                    <a href="https://github.com/nathaliafreboucas" target="_blank" ><img class="img-footer" src="./images/git.png"></a>
+                </p>    
+            </footer>
+        </div>
+    
+
+        <script>
+
+            function criptografarString(){
+
+                textoCriptografado = texto.value;
+                var procuraLetra = textoCriptografado.search(/[A-Z||áàâãä-úùũûü||Çç]/);
+
+                if(procuraLetra != -1){
+                    alert ('Permitido apenas letras minúsculas e sem acentuação.Tente novamente!');
+                }else{
+                    textoCriptografado = textoCriptografado.replaceAll('e', 'enter').replaceAll('i', 'imes')
+                    .replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat');
+
+                    document.getElementById('mostra-mensagem').innerHTML = textoCriptografado;
+                    texto.value = ""; 
+                }
+
+               
+            
+            }
+            function decriptografarString(){
+
+                textoDecriptografado = texto.value;
+                var procuraLetra = textoCriptografado.search(/[A-Z||áàâãä-úùũûü||Çç]/);
+                
+                if(procuraLetra != -1){
+                    alert ('Permitido apenas letras minúsculas e sem acentuação.Tente novamente!');
+                }else{
+                    textoDecriptografado = textoDecriptografado.replaceAll('enter', 'e').replaceAll('imes', 'i')
+                    .replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u');
+
+                    document.getElementById('mostra-mensagem').innerHTML = textoDecriptografado;
+                    texto.value = "";
+                }
+                
+                        
+            } 
+
+            function copiar(){
+
+                var copia = document.getElementById('mostra-mensagem');
+                var range = document.createRange();
+
+                range.selectNode(copia);
+                window.getSelection().addRange(range);
+                document.execCommand('copy');
+                alert('Copiado para a área de transferencia!')
+
+            }   
+       
+            var textoCriptografado;
+            var textoDecriptografado;
+
+            var texto = document.querySelector('textarea');
+            var botaoCriptografa = document.getElementById('encrypt');
+            var botaoDecriptografa = document.getElementById('decrypt');
+            var botaoCopiar = document.getElementById('copy');
+            
+            
+            botaoCriptografa.onclick = criptografarString;
+            botaoDecriptografa.onclick = decriptografarString;
+            botaoCopiar.onclick = copiar;
+
+           
+                           
+
+        </script>
+
+    </body>
+
+
+</html>
