@@ -61,69 +61,58 @@
         <script>
 
             function criptografarString(){
-
+        
                 textoCriptografado = texto.value;
-                var procuraLetra = textoCriptografado.search(/[A-Z||áàâãä-úùũûü||Çç]/);
-
-                if(procuraLetra != -1){
-                    alert ('Permitido apenas letras minúsculas e sem acentuação.Tente novamente!');
-                }else{
-                    textoCriptografado = textoCriptografado.replaceAll('e', 'enter').replaceAll('i', 'imes')
-                    .replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat');
-
-                    document.getElementById('mostra-mensagem').innerHTML = textoCriptografado;
-                    texto.value = ""; 
-                }
-
+                
+                textoCriptografado = textoCriptografado.replaceAll('e', 'enter').replaceAll('i', 'imes')
+                .replaceAll('a', 'ai').replaceAll('o', 'ober').replaceAll('u', 'ufat');
+        
+                document.getElementById('mostra-mensagem').innerHTML = textoCriptografado;
+                texto.value = ""; 
                
-            
             }
+
             function decriptografarString(){
-
+        
                 textoDecriptografado = texto.value;
-                var procuraLetra = textoCriptografado.search(/[A-Z||áàâãä-úùũûü||Çç]/);
-                
-                if(procuraLetra != -1){
-                    alert ('Permitido apenas letras minúsculas e sem acentuação.Tente novamente!');
-                }else{
-                    textoDecriptografado = textoDecriptografado.replaceAll('enter', 'e').replaceAll('imes', 'i')
-                    .replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u');
 
-                    document.getElementById('mostra-mensagem').innerHTML = textoDecriptografado;
-                    texto.value = "";
-                }
-                
-                        
+                textoDecriptografado = textoDecriptografado.replaceAll('enter', 'e').replaceAll('imes', 'i')
+                .replaceAll('ai', 'a').replaceAll('ober', 'o').replaceAll('ufat', 'u');
+        
+                document.getElementById('mostra-mensagem').innerHTML = textoDecriptografado;
+                texto.value = "";
+                    
             } 
-
+        
             function copiar(){
-
+        
                 var copia = document.getElementById('mostra-mensagem');
                 var range = document.createRange();
-
+        
                 range.selectNode(copia);
                 window.getSelection().addRange(range);
                 document.execCommand('copy');
                 alert('Copiado para a área de transferencia!')
-
+        
             }   
-       
+        
             var textoCriptografado;
             var textoDecriptografado;
-
             var texto = document.querySelector('textarea');
-            var botaoCriptografa = document.getElementById('encrypt');
-            var botaoDecriptografa = document.getElementById('decrypt');
             var botaoCopiar = document.getElementById('copy');
-            
+        
+            var procuraLetra = texto.value.search(/[A-Z||áàâãä-úùũûü||Çç]/);    
+            if(procuraLetra != -1){
+                alert ('Permitido apenas letras minúsculas e sem acentuação.Tente novamente!');
+            }else{
+                var botaoCriptografa = document.getElementById('encrypt');
+                var botaoDecriptografa = document.getElementById('decrypt');   
+            }    
             
             botaoCriptografa.onclick = criptografarString;
             botaoDecriptografa.onclick = decriptografarString;
             botaoCopiar.onclick = copiar;
-
-           
-                           
-
+        
         </script>
 
     </body>
