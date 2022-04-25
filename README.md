@@ -1,5 +1,5 @@
 # Codificador de Mensagens
-<p>Primeiro Alura Challenge do bootcamp ONE (Oracle Next Education). O objetivo era fazer um programa que encriptografasse e descriptografasse mensagens usando JavaScript </p>
+<p>Primeiro Alura Challenge do bootcamp ONE (Oracle Next Education). O objetivo era fazer um programa que criptografasse e descriptografasse mensagens usando JavaScript </p>
 
 ## Clique <a href = https://nathaliafreboucas.github.io/criptografia>aqui</a> para ir direto para o site.
 
