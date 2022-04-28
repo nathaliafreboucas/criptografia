@@ -76,15 +76,7 @@ textarea:focus{
     
           
 }
-#informe{
-    width: 30%;
-    margin-left: 10%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 0.7rem;
-    margin-top:10px;
-    
-}
+
 
 #botoes{
     display: inline-block;
@@ -130,11 +122,28 @@ textarea:focus{
        border-radius: 20px;
        text-decoration: none;
 }
-#rodape{
-    display: flex;
-    align-items: center;
+
+#informe{
+    width: 30%;
+    margin-left: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+    margin-top:10px;
     
 }
+.rodape{
+
+    display:flex;
+    align-items:center;
+    color: rgb(94, 0, 0);
+    font-size:0.9rem;
+    
+}
+.rodape p{
+    margin-right: 5px;
+}
+
 footer{
     display:flex;
     justify-content: center;
@@ -160,5 +169,6 @@ footer{
     padding: 20px;
     color: rgb(94, 0, 0);
     font-size: 0.9rem;  
+    margin-right: 0;
     
 }
