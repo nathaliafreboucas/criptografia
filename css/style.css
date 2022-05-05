@@ -16,7 +16,7 @@ body{
 }
 #titulo{
     text-align: center;
-    margin: 20px;
+    margin: 0.3em 0 1em;
     color: rgb(94, 0, 0);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 100;
@@ -85,6 +85,7 @@ textarea:focus{
     width: 40%;
     margin-left: 10%;
     margin-top: 10px;
+    margin-bottom: 3%;
     
 }
 
@@ -123,14 +124,13 @@ textarea:focus{
        text-decoration: none;
 }
 
-#informe{
-    width: 30%;
-    margin-left: 10%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 0.7rem;
-    margin-top:10px;
-    
+
+footer{
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    background-color:rgba(255, 0, 0, 0.2);
+    padding: 10px 0;
 }
 .rodape{
 
@@ -141,18 +141,7 @@ textarea:focus{
     
 }
 .rodape p{
-    margin-right: 5px;
-}
-
-footer{
-    display:flex;
-    justify-content: center;
-    width: 100%;
-    height: 60px;
-    background-color:rgba(51, 50, 50, 0.2);
-    position:fixed;
-    bottom:0;
-
+    margin: 0 5px 0 0;
 }
 
 .img-footer{
@@ -171,4 +160,44 @@ footer{
     font-size: 0.9rem;  
     margin-right: 0;
     
+}
+
+@media screen and (max-width:480px){
+
+    #bloco-mensagem{
+        width: 100%;
+        margin: 0 auto 1em;
+        padding: 0 8%
+    }
+
+    #botoes{
+        width:auto;
+        margin: 0 8% 1em;
+    }
+    #botao-copy{
+        width: 100%;
+        margin: 0 auto 1em;
+    }
+    
+
+}
+
+@media screen and (max-width:810px){
+    
+    .area-principal{
+        padding: 0 8%;
+    }
+    .area-texto{
+        width: 100%;
+        margin: auto;
+        
+    }
+
+    #bloco-mensagem{
+        width: 100%;
+        margin: 0 auto 1em;
+        
+    }
+
+
 }
