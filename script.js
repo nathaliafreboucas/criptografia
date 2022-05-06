@@ -40,13 +40,10 @@ function decriptografarString(){
 function copiar(){
         
     var copia = document.getElementById('mostra-mensagem');
-    var range = document.createRange();
         
-    range.selectNode(copia);
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
+    navigator.clipboard.writeText(copia.textContent);
     alert('Copiado para a área de transferencia!')
-        
+       
 }   
         
 var textoCriptografado;
