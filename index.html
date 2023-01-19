@@ -6,52 +6,48 @@
         <meta name="viewport" content="width=device-width">
         <meta name = "author" content=" Nathália Rebouças">
         <link rel="stylesheet" href="css/reset.css">
-        <link rel = "stylesheet" href ="css/style.css"> 
-        
-        
+        <link rel = "stylesheet" href ="css/style.css">     
     </head>
 
     <body>
-        <header id="cabecalho">
-            <h1 id="logo">N</h1>
+        <header class="cabecalho">
+            <div class="cabecalho-div-logo">
+                <h1 id="logo">N</h1>
+            </div>
+            <div>
+                <h1 id="titulo">Criptografador de Mensagens</h1>
+            </div>
         </header>
-
-        <h1 id="titulo">Criptografador de Mensagens</h1>
         
-        <div class="area-principal">
+        <section class="area-principal">
             <div class="area-texto" >
                 <textarea placeholder="Digite aqui sua mensagem"  type="text" ></textarea>
             </div> 
 
             <div id="bloco-mensagem"> 
-                <div class="mostra-mensagem" id="mostra-mensagem">
-                    <img src="./images/oops.png" id="img-procuramensagem">
-                </div>  
+                <div class="mostra-mensagem" id="mostra-mensagem"><img src="./images/oops.png" id="img-procuramensagem"></div>  
             </div>         
-        </div> 
+        </section> 
         
-        <div id="botoes">
-            <button class= 'botao' id="encrypt">Criptografar</button>
-            <button class= 'botao' id="decrypt">Descriptografar</button>
-        </div>
-        <div id="botao-copy">
-            <button class= 'botao' id="copy">Copiar</button> 
-            
-        </div>
- 
-        
-        <footer>
-            <div class="rodape">
-                <p id="info"> 
-                    <p>&copy;Nathália F. Rebouças</p>
-                    <a href="https://www.linkedin.com/in/nathalia-reboucas/" target="_blank" ><img class="img-footer" src="./images/linkedin.png"></a>
-                    <a href="https://github.com/nathaliafreboucas" target="_blank" ><img class="img-footer" src="./images/git.png"></a>
-                    
-                </p>
-            </div>    
+        <section class="area-botoes">
+            <div id="botoes">
+                <button class= 'botao' id="encrypt">Criptografar</button>
+                <button class= 'botao' id="decrypt">Descriptografar</button>
+            </div>
+            <div id="botao-copy">
+                <button class= 'botao' id="copy">Copiar</button>  
+            </div>
+        </section>
+
+        <footer class="rodape">
+             <p id="info"> 
+                <p>&copy;Nathália F. Rebouças</p>
+                <a href="https://www.linkedin.com/in/nathalia-reboucas/" target="_blank" ><img class="img-footer" src="./images/linkedin.png"></a>
+                <a href="https://github.com/nathaliafreboucas" target="_blank" ><img class="img-footer" src="./images/git.png"></a>
+            </p>
         </footer>
         
-    
+
         <script src="./script.js"> </script>
 
     </body>

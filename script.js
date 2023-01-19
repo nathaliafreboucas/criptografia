@@ -1,10 +1,10 @@
  
-var timestamp = new Date();
+let timestamp = new Date();
 document.getElementById('info').innerHTML = timestamp.getFullYear();
 
 function criptografarString(){
-    var procura = /[A-Z&&áàâãä-úùũûü&&Çç]/;
-    var procuraLetra = texto.value.search(procura); 
+    let procura = /[A-Z&&áàâãä-úùũûü&&Çç]/;
+    let procuraLetra = texto.value.search(procura); 
         
     if(procuraLetra != -1){
         alert ('Permitido apenas letras minúsculas e sem acentuação.Tente novamente!');
@@ -20,8 +20,8 @@ function criptografarString(){
 }
             
 function decriptografarString(){
-    var procura = /[A-Z&&áàâãä-úùũûü&&Çç]/;
-    var procuraLetra = texto.value.search(procura); 
+    let procura = /[A-Z&&áàâãä-úùũûü&&Çç]/;
+    let procuraLetra = texto.value.search(procura); 
         
     if(procuraLetra != -1){
         alert ('Permitido apenas letras minúsculas e sem acentuação.Tente novamente!');
@@ -39,20 +39,22 @@ function decriptografarString(){
         
 function copiar(){
         
-    var copia = document.getElementById('mostra-mensagem');
-        
-    navigator.clipboard.writeText(copia.textContent);
-    alert('Copiado para a área de transferencia!')
-       
+    let copia = document.getElementById('mostra-mensagem');
+    let copiaValor = copia.textContent;
+
+    if(copiaValor.replaceAll(" ","").length == 0){
+       alert("Não há conteúdo para copiar! Primeiro digite uma mensagem.");
+    }else{
+        navigator.clipboard.writeText(copiaValor);
+        alert('Copiado para a área de transferencia!');
+    }        
 }   
         
-var textoCriptografado;
-var textoDecriptografado;
-var texto = document.querySelector('textarea');
-var botaoCopiar = document.getElementById('copy');
+let texto = document.querySelector('textarea');
+let botaoCopiar = document.getElementById('copy');
             
-var botaoCriptografa = document.getElementById('encrypt');
-var botaoDecriptografa = document.getElementById('decrypt');
+let botaoCriptografa = document.getElementById('encrypt');
+let botaoDecriptografa = document.getElementById('decrypt');
             
 botaoCriptografa.onclick = criptografarString;
 botaoDecriptografa.onclick = decriptografarString;
