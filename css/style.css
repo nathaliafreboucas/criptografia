@@ -116,7 +116,7 @@ textarea:focus{
 }
 
 .botao {
-    background: rgb(94, 0, 0);
+    background: var(--vermelho-principal);
     border: solid #762C2C 1px;
     border-radius: 20px;
     box-shadow: 1px 1px 6px 0px #703b3b;
@@ -138,7 +138,6 @@ textarea:focus{
        text-decoration: none;
 }
 
-
 .rodape{
     align-items:center;
     background-color:var(--vermelho-principal);
@@ -148,6 +147,8 @@ textarea:focus{
     grid-area: rodape;
     justify-content: center;
     width: 100%;
+    padding: 0.4rem;
+    box-sizing: border-box;
 }
 
 .img-footer{
